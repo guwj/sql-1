@@ -1,7 +1,7 @@
 -- 1번
   select first_name || ' ' || last_name as "이름",
 	     salary as "월급",
-	     phone_number	as "전화번호" 
+	     phone_number as "전화번호" 
     from employees
 order by hire_date asc; 
   
@@ -23,7 +23,8 @@ select count(*)
 order by salary desc;
 
 -- 5번
-select count(*) from departments;
+select count(*)
+  from departments;
 
 -- 6번
   select department_name 
@@ -47,5 +48,5 @@ order by length(region_name) asc;
 
 -- 10번
   select distinct lower(city)
-    from locations  
-order by lower(city) asc;  
+    from locations
+order by lower(city) asc;
