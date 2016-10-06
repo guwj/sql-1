@@ -41,10 +41,10 @@ order by diff_avg_min desc;
 
 -- 7번
   select job_id,
-	     ( max(salary) - min(salary) ) as diff_max_min_salary
+	     ( max(salary) - min(salary) ) as diff
     from employees
 group by job_id	 
-order by diff_max_min_salary desc;      	   
+order by diff desc;      	   
 
 select job_title
   from jobs
