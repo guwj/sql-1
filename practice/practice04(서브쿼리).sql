@@ -38,7 +38,7 @@ select employee_id, a.department_id, last_name, salary
             from employees
 	    group by department_id ) b
  where a.department_id = b.department_id
-   and a.salary >= b.avg_salary;
+   and a.salary > b.avg_salary;
 
 
 
