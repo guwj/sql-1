@@ -62,14 +62,24 @@ select region_name
                 order by avg_salary desc ) )
  where rn = 1;
  
- 
--- top-k
+--문제6
+select job_title
+  from ( select rownum as rn, job_title, avg_salary
+           from ( select b.job_title, avg(a.salary) as avg_salary 
+                    from employees a,
+                         jobs b
+                   where a.job_id = b.job_id
+                group by b.job_title
+                order by avg_salary desc ) )
+ where rn = 1;
+  
+  
+--[참고] top-k
   select rownum, employee_id, salary
     from (  select employee_id, salary
               from employees
           order by salary desc ) 
  where rownum = 1;
- 
  
   select *
     from ( select rownum as rn, employee_id, salary
